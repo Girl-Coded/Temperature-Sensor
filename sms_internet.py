@@ -41,19 +41,3 @@ def send_sms(recipient, sender, message, auth_token, account_sid):
         print("Success")
         print(r.status_code)
     r.close()
-
-def main():
-   # ssid = ''
-   # password = ''
-   # recipient = ''
-   # sender = ''
-   # auth_token = ''
-   # account_sid = ''
-   # message = ''
-   
-   connect_to_internet(ssid, password)
-   # Send the SMS
-   send_sms(recipient, sender, message, auth_token, account_sid)
-
-if __name__ == "__main__":
-    main()
