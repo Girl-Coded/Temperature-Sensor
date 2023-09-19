@@ -1,3 +1,4 @@
+
 # DS18x20 temperature sensor driver for MicroPython.
 # MIT license; Copyright (c) 2016 Damien P. George
 
@@ -50,3 +51,6 @@ class DS18X20:
             if t & 0x8000:  # sign bit set
                 t = -((t ^ 0xFFFF) + 1)
             return t / 16
+
+     def get_fahrenheit(self, temp):
+        return 32+(1.8*temp)
