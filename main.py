@@ -1,5 +1,6 @@
 import machine
 import constants
+from machine import Pin
 import onewire 
 import ds18x20 
 import time
@@ -17,7 +18,9 @@ I2C_NUM_COLS = 20
  
 i2c = I2C(0, sda=machine.Pin(0), scl=machine.Pin(1), freq=400000)
 lcd = I2cLcd(i2c, I2C_ADDR, I2C_NUM_ROWS, I2C_NUM_COLS)
-    
+lcd.backlight_off()
+button = Pin(14, Pin.IN, Pin.PULL_UP)
+
 ds_pin = machine.Pin(17) 
 ds = ds18x20.DS18X20(onewire.OneWire(ds_pin))
 roms = ds.scan()[0]  # the one and only sensor
@@ -63,8 +66,15 @@ def main():
         temp_cel = ds.read_temp(roms)
         temp_fah = ds.get_fahrenheit(temp_cel)
         print("Temp: {}°C {}°F".format(round(temp_cel,2), round(temp_fah,2)))
-        lcd.putstr("Temp: {}{}C".format((round(temp_cel,2)),degree))
-        lcd.putstr("\nTemp: {}{}F ".format((round(temp_fah,2)),degree))
+        
+        if button.value() == 0:
+            lcd.backlight_on()
+            lcd.display_on()
+            lcd.putstr("Temp: {}{}C".format((round(temp_cel,2)),degree))
+            lcd.putstr("\nTemp: {}{}F ".format((round(temp_fah,2)),degree))
+        else:
+            lcd.backlight_off()
+            lcd.display_off()
         publish("Temp", "temp_cel")
         if (temp_fah > 90):
             send_sms(recipient, sender, message, auth_token, account_sid)
@@ -73,4 +83,3 @@ def main():
 
 if __name__ == "__main__":
     main()   
-
