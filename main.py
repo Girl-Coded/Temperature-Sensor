@@ -1,15 +1,12 @@
 import machine
-from machine import Pin
+import time
 import constants
 import environment
 import onewire 
 import ds18x20 
-import time
-from machine import I2C
+from machine import Pin, I2C
 from lcd_api import LcdApi
 from pico_i2c_lcd import I2cLcd
-import network
-import urequests
 from sms_internet import connect_to_internet, send_sms
 from umqtt.simple import MQTTClient
 
@@ -81,7 +78,6 @@ def main():
 
     while True:
         ds.convert_temp()
-        time.sleep_ms(750)
         for rom in roms:
             lcd.clear()
             temp_cel = ds.read_temp(roms)
@@ -114,7 +110,7 @@ def main():
                 client.check_msg()
             except Exception as e:
                 print("Error checking MQTT messages: ", str(e))
-            time.sleep(2)
+            time.sleep(1)
 
 if __name__ == "__main__":
     main()
