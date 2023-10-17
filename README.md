@@ -127,6 +127,31 @@ The agile methodology was our guiding principle, allowing for iterative developm
 
 Figure 14: Gantt Chart
 
+Appendix & References 
+DS18B20 Digital Temperature Sensor and Thermal Watchdog Data Sheet. Retrieved from https://www.analog.com/media/en/technical-documentation/data-sheets/DS18B20.pdf 
 
+Micropython. (n.d.). DS18x20 temperature sensor driver for MicroPython. Retrieved from https://github.com/micropython/micropython-lib/tree/master/micropython/drivers/sensor/ds18x20  
+
+Micropython. (n.d.). Onewire bus driver for MicroPython. Retrieved from https://github.com/micropython/micropython-lib/tree/master/micropython/drivers/bus/onewire  
+
+Micropython. (n.d.). Robust MQTT client implementation for MicroPython. Retrieved from https://github.com/micropython/micropythonlib/blob/master/micropython/umqtt.robust/umqtt/robust.py 
+
+Micropython. (n.d.). Simple MQTT client implementation for MicroPython. Retrieved from https://github.com/micropython/micropythonlib/blob/master/micropython/umqtt.simple/umqtt/simple.py 
+
+Micropython.org. (n.d.). Onewire driver for RP2 - Quick reference. Retrieved from https://docs.micropython.org/en/latest/rp2/quickref.html#onewire-driver  
+
+Micropython.org. (n.d.). Onewire for ESP8266. Retrieved from https://docs.micropython.org/en/latest/esp8266/tutorial/onewire.html 
+
+Pinout.xyz. (n.d.). Pico pinout. Retrieved from 
+https://pico.pinout.xyz 
+
+Raspberry Pi Foundation. (n.d.). Connecting to the internet with Pico W. Retrieved from https://datasheets.raspberrypi.com/picow/connecting-to-the-internet-with-pico-w.pdf?_gl=1*vpm2gr*_ga*ODg4MDQxMzQwLjE2OTYxOTgwNDA.*_ga_22FD70LWDS*MTY5NjE5ODAzOS4xLjEuMTY5NjE5ODA2Ny4wLjAuMA.. 
+
+Raspberry Pi Foundation. (n.d.). Pico W datasheet. Retrieved from https://datasheets.raspberrypi.com/picow/pico-w-datasheet.pdf?_gl=1*1pxt7cb*_ga*ODg4MDQxMzQwLjE2OTYxOTgwNDA.*_ga_22FD70LWDS*MTY5NjE5ODAzOS4xLjEuMTY5NjE5ODA3Ny4wLjAuMA.. 
+
+T-622. (n.d.). RPI-PICO-I2C-LCD. Retrieved from 
+https://github.com/T-622/RPI-PICO-I2C-LCD/tree/main 
+
+![Table6.png](https://github.com/fqkammona/Temperature-Sensor/blob/main/Lab-Images/Table6.png)
 
 
